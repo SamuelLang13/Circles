@@ -16,6 +16,8 @@ int main(void)
     double s1;
     double s2;
 
+    double rc;
+
     printf("Zadejte parametry kruznice #1:\n");
     if(scanf("%lf %lf %lf",&x1,&y1,&r1)!=3)
     {
@@ -40,7 +42,7 @@ int main(void)
         }
         else
         {
-            d=sqrt((x2-x1)+(y2-y1));
+            d=sqrt(pow(x2-x1,2)+pow(y2-y1,2));
 
             if(d==0)
             {
@@ -48,11 +50,25 @@ int main(void)
                 s2=acos(-1)*r2*r2;
                 if(s1>s2)
                 {
-                    
+
                 }
                 
 
             }
+            else
+            {
+                rc=r1+r2;
+                if(d>rc)
+                {
+                    printf("Kruznice lezi vne sebe, zadny prekryv.\n");
+                }
+                else
+                {
+
+                }
+                
+            }
+            
         }
         
         
